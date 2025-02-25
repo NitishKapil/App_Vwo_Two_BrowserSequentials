@@ -1,0 +1,14 @@
+<suite name="Browser Test Suite" parallel ="method" thread-count="1">
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="test.testcasepositive"/>
+        </classes>
+    </test>
+    <test name="FireFox Test">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+        <class name="test.testcasepositive"/>
+    </classes>
+</test>
+</suite>
