@@ -1,6 +1,8 @@
 package driver;
 
+
 import com.beust.jcommander.Parameter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,6 +26,7 @@ public class SingleBrowser {
         if (driver == null) {
             switch (browser) {
                 case "chrome":
+                    WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
                 case "firefox":
