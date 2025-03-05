@@ -26,6 +26,9 @@ public class SingleBrowser {
                 case "chrome":
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
+                    chromeOptions.addArguments("--disable-gpu"); // Fix UI-related issues
+                    chromeOptions.addArguments("--no-sandbox"); // Required when running as root
+                    chromeOptions.addArguments("--disable-dev-shm-usage"); // Prevent memory issues
                     driver = new ChromeDriver(chromeOptions);
                     break;
                 case "firefox":
